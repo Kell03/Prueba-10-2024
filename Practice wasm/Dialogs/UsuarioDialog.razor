@@ -1,0 +1,39 @@
+﻿@page "/dialogusuario/{Id}"
+
+@inject DialogService dialogService
+
+<RadzenRow Gap="1rem">
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Nombre de Usuario" Variant="Variant.Flat">
+                <RadzenTextBox @bind-value="@usuario.NombreUsuario" />
+            </RadzenFormField>
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Email" Variant="Variant.Flat">
+                <RadzenTextBox @bind-value="@usuario.Email" Type="email" />
+            </RadzenFormField>
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Password" Variant="Variant.Flat">
+                <RadzenPassword @bind-value="@usuario.Password" />
+            </RadzenFormField>
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="12" SizeSM="12" Alignment="AlignItems.End">
+        <RadzenButton Click="@((args) => dialogService.Close(true))" ButtonStyle="ButtonStyle.Secondary" Variant="Variant.Flat" Text="Cerrar" Style="width: 120px" />
+        <RadzenButton Text="Guardar" Click="@ActualizarUsuario" ButtonStyle="ButtonStyle.Primary" />
+    </RadzenColumn>
+</RadzenRow>
+
+
+@code {
+
+}

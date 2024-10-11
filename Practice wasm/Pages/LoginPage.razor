@@ -1,0 +1,59 @@
+﻿@page "/"
+@layout LoginLayout
+
+@inject HttpClient httpclient
+@using Practice_wasm.Extensiones
+@using Practice_wasm.Models
+@using Practice_wasm.Interface
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider autenticacionProvider
+@inject NavigationManager navManager
+@inject IloginService loginService
+
+
+<RadzenStack Gap="0" class="rz-my-12 rz-mx-auto rz-border-radius-6 rz-shadow-10" Style="width: 100%; max-width: 400px; overflow: hidden;">
+    <RadzenCard class="rz-shadow-0 rz-border-radius-0 rz-background-color-info rz-p-12" style="text-align: center;">
+        <RadzenText TextStyle="TextStyle.DisplayH3" TagName="TagName.H2" class="rz-color-white rz-mb-0">Login</RadzenText>
+    </RadzenCard>
+    <RadzenCard class="rz-shadow-0 rz-p-12">
+        <RadzenTemplateForm Data=@("SimpleLogin")>
+            <RadzenColumn Size="12" SizeSM="6">
+                <RadzenTextBox Name="Username" Placeholder="Usuario" @bind-Value=@usuario.NombreUsuario Style="width: 100%;" />
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeSM="6">
+
+                <RadzenTextBox Name="Password" Placeholder="Contraseña" @bind-Value=@usuario.Password Style="width: 100%;" Type="password" />
+            </RadzenColumn>
+            <RadzenColumn Size="12" SizeSM="6" style="display: flex; justify-content: center;">
+
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Click="@IniciarSesion" Text="Iniciar Sesión" />
+            </RadzenColumn>
+        </RadzenTemplateForm>
+    </RadzenCard>
+</RadzenStack>
+
+
+@code {
+    UsuarioDto usuario = new UsuarioDto();
+
+    private async Task IniciarSesion()
+    {
+        try
+        {
+            if (!string.IsNullOrWhiteSpace(usuario.NombreUsuario) && !string.IsNullOrWhiteSpace(usuario.Password))
+            {
+                var resultado = await loginService.login(usuario);
+                var autenticacionExt = (AutenticacionExtension)autenticacionProvider;
+
+                await autenticacionExt.ActualizarEstadoAutenticacion(resultado.value, resultado.token);
+                navManager.NavigateTo("/home");
+            }
+        }
+        catch(Exception ex)
+        {
+        }
+    }
+
+
+
+}

@@ -1,0 +1,14 @@
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\CapaPersistencia.deps.json
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\CapaPersistencia.runtimeconfig.json
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\CapaPersistencia.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\CapaPersistencia.pdb
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\refint\CapaPersistencia.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.pdb
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\CapaPersistencia.genruntimeconfig.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\ref\CapaPersistencia.dll

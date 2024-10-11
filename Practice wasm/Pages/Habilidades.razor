@@ -1,0 +1,98 @@
+﻿@page "/habilidades"
+@using Practice_wasm.Models
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@inject DialogService DialogService
+@attribute [Authorize]
+
+
+<h3>Habilidades</h3>
+
+
+
+@if (habilidadlist == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 mb-2">
+                <RadzenButton Icon="add" ButtonStyle="ButtonStyle.Primary" Click=@(() => OpenOrder(0)) />
+
+            </div>
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-12">
+                <RadzenDataGrid @ref="ordersGrid" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                                Data="@habilidadlist" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" @bind-Value=@selectedhabilidad>
+
+
+                    <Columns>
+
+                        <RadzenDataGridColumn Property="@nameof(HabilidadDto.Id)" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn Property="@nameof(HabilidadDto.Nombre)" Title="Nombre" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(HabilidadDto.Descripcion)" Title="Descripcion" Width="160px" />
+                        <RadzenDataGridColumn Width="160px" Property="OrderID" Title="Order Details">
+                            <Template Context="data">
+                                <div class="d-flex justify-content-start gap-2">
+                                    <RadzenButton ButtonStyle="ButtonStyle.Info"  Icon="edit" Size="ButtonSize.ExtraSmall" Click=@(() => OpenOrder(data.Id)) />
+                                    <RadzenButton ButtonStyle="ButtonStyle.Danger"  Icon="delete" Size="ButtonSize.ExtraSmall" Click=@(() => Eliminar(data.Id)) />
+                                </div>
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                    </Columns>
+                </RadzenDataGrid>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+}
+
+@code {
+
+
+
+    //  IQueryable<HabilidadDto> habilidadlist;
+    //
+    //  IList<HabilidadDto> selectedhabilidad;
+    //
+    //
+    //
+    //  protected override async Task OnInitializedAsync()
+    //  {
+    //    try
+    //    {
+    //        var respuesta = await HabilidadService.GetAll();
+    //        habilidadlist = respuesta.Value.Data.AsQueryable(); // Convierto la lista a IQueryable
+    //        selectedhabilidad = new List<HabilidadDto>() { habilidadlist.FirstOrDefault() };
+    //
+    //
+    //        // Llama a console.log usando JSRuntime
+    //         await JSRuntime.InvokeVoidAsync("console.log", $"Habilidades cargadas:");
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         await JSRuntime.InvokeVoidAsync("console.log", $"Error al cargar habilidades: {ex.Message}");
+    //     }
+    // }
+
+
+
+}

@@ -1,0 +1,59 @@
+﻿@page "/usuarios"
+@using Practice_wasm.Models
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@inject DialogService DialogService
+@attribute [Authorize]
+
+
+
+<h3>Usuarios</h3>
+
+
+
+@if (usuarioList == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 mb-2">
+                <RadzenButton Icon="add" ButtonStyle="ButtonStyle.Primary" Click=@(() => OpenOrder(0)) />
+            </div>
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-12">
+                <RadzenDataGrid @ref="usersGrid" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                                Data="@usuarioList" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" @bind-Value=@selectedUsuario>
+
+
+                    <Columns>
+
+                        <RadzenDataGridColumn Property="@nameof(UsuarioDto.Id)" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn Property="@nameof(UsuarioDto.NombreUsuario)" Title="Nombre de Usuario" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(UsuarioDto.Email)" Title="Email" Width="160px" />
+                        <RadzenDataGridColumn Width="160px" Property="OrderID" Title="User Details">
+                            <Template Context="data">
+                                <div class="d-flex justify-content-start gap-2">
+                                    <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="edit" Size="ButtonSize.ExtraSmall" Click=@(() => OpenOrder(data.Id)) />
+                                    <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.ExtraSmall" Click=@(() => Eliminar(data.Id)) />
+                                </div>
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                    </Columns>
+                </RadzenDataGrid>
+
+            </div>
+
+        </div>
+
+    </div>
+}
+
+@code {
+
+}

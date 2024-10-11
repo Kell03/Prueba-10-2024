@@ -1,0 +1,47 @@
+﻿@page "/dialoghabilidad/{Id}"
+
+@inject DialogService dialogService
+
+
+<RadzenRow Gap="1rem">
+        <RadzenColumn Size="6" SizeSM="6">
+            <RadzenStack>
+                <RadzenFormField Text="Nombre" Variant="Variant.Flat">
+                <RadzenTextBox @bind-value="@habilidad.Nombre" />
+            </RadzenFormField>
+
+            </RadzenStack>
+         </RadzenColumn>
+
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Descripcion" Variant="Variant.Flat">
+                <RadzenTextBox @bind-value="@habilidad.Descripcion"  />
+            </RadzenFormField>
+
+        </RadzenStack>
+    </RadzenColumn>
+    <RadzenColumn Size="12" SizeSM="12" Alignment="AlignItems.End">
+        <RadzenButton Click="@((args) => dialogService.Close(true))" ButtonStyle="ButtonStyle.Secondary" Variant="Variant.Flat" Text="Close" Style="width: 120px" />
+
+        <RadzenButton Text="Guardar" Click="@ActualizarHabilidad" ButtonStyle="ButtonStyle.Primary" />
+    </RadzenColumn>
+</RadzenRow>
+
+@code {
+ //  [Parameter] public int OrderID { get; set; }
+ //
+ //  Order order;
+ //  IEnumerable<OrderDetail> orderDetails;
+ //
+ //  protected override async Task OnInitializedAsync()
+ //  {
+ //      await base.OnInitializedAsync();
+ //
+ //      order = dbContext.Orders.Where(o => o.OrderID == OrderID)
+ //                        .Include("Customer")
+ //                        .Include("Employee").FirstOrDefault();
+ //
+ //      orderDetails = dbContext.OrderDetails.Include("Order").ToList();
+ //  }
+}

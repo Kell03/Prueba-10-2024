@@ -1,0 +1,39 @@
+﻿@page "/auditoria"
+@using Practice_wasm.Models
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@inject DialogService DialogService
+@attribute [Authorize]
+<h3>Auditoría</h3>
+
+@if (auditoriaList == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <RadzenDataGrid @ref="auditoriasGrid" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                                Data="@auditoriaList" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" @bind-Value=@selectedAuditoria>
+
+                    <Columns>
+                        <RadzenDataGridColumn Property="@nameof(AuditoriaDto.Id)" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn Property="AuditoriaDto.Producto.Nombre.ToString()" Title="Nombre del Producto" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(AuditoriaDto.Cantidad)" Title="Cantidad" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(AuditoriaDto.Accion)" Title="Acción" Width="160px" />
+                        <RadzenDataGridColumn Property="AuditoriaDto.Usuario.NombreUsuario.ToString()" Title="Usuario" Width="160px" />
+
+                        <RadzenDataGridColumn Property="@nameof(AuditoriaDto.CreatedAt)" Title="Fecha de Acción" Width="160px" />
+                    </Columns>
+                </RadzenDataGrid>
+            </div>
+        </div>
+    </div>
+}
+@code {
+
+}

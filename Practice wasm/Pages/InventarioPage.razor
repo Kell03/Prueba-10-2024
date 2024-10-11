@@ -1,0 +1,45 @@
+﻿@page "/inventario"
+@using Practice_wasm.Models
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@inject DialogService DialogService
+@attribute [Authorize]
+<h3>Inventario</h3>
+
+@if (inventarioList == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 mb-2">
+            </div>
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-12">
+
+                <RadzenDataGrid @ref="inventariosGrid" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                                Data="@inventarioList" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" @bind-Value=@selectedInventario>
+
+                    <Columns>
+
+                        <RadzenDataGridColumn Property="@nameof(InventarioDto.Id)" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn Property="InventarioDto.Producto.Nombre.ToString()" Title="Nombre" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(InventarioDto.Cantidad)" Title="Cantidad" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(InventarioDto.TipoMovimiento)" Title="Tipo de Movimiento" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(InventarioDto.FechaMovimiento)" Title="Fecha de Movimiento" Width="160px" />
+
+                       
+
+                    </Columns>
+                </RadzenDataGrid>
+            </div>
+        </div>
+    </div>
+}
+@code {
+
+}

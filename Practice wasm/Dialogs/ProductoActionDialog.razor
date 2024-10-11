@@ -1,0 +1,41 @@
+﻿@page "/dialogproductoaction/{Id}"
+
+@inject DialogService dialogService
+<RadzenRow Gap="1rem">
+
+    <RadzenColumn Size="12" SizeSM="6">
+
+        <RadzenFormField Text="Tipo Transaccion" Variant="Variant.Flat">
+
+
+            <RadzenDropDown Value="accion"
+                            Data="@tipoaccionOptions"
+                            Placeholder="Seleccione un tipo"
+                            TextProperty="Text"
+                            ValueProperty="Value"
+                            TValue="string"
+                            Change="@(args => OnaccionChange(args))" />
+        </RadzenFormField>
+    </RadzenColumn>
+    <RadzenColumn Size="12" SizeSM="6">
+
+
+        <div style="display: inline-flex">
+            <div class="w-auto justify-content-end align-items-center">
+
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="remove" Click="@DecrementCount" Size="ButtonSize.ExtraSmall" />
+
+                <!-- Flexbox para alinear horizontalmente -->
+                <span style="margin: 0 10px;">@contador</span> <!-- Espaciado alrededor del texto -->
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="add" Click="@IncrementCount" Size="ButtonSize.ExtraSmall" />
+
+            </div>
+        </div>
+    </RadzenColumn>
+
+    <RadzenColumn Size="12" SizeSM="12" Alignment="AlignItems.End">
+        <RadzenButton Click="@((args) => dialogService.Close(true))" ButtonStyle="ButtonStyle.Secondary" Variant="Variant.Flat" Text="Cerrar" Style="width: 120px" />
+
+        <RadzenButton Text="Siguente" Click="@MakeTransaction" ButtonStyle="ButtonStyle.Primary" />
+    </RadzenColumn>
+</RadzenRow>

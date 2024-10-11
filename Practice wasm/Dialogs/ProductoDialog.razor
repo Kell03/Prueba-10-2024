@@ -1,0 +1,64 @@
+﻿@page "/dialogproducto/{Id}"
+
+@inject DialogService dialogService
+
+<RadzenRow Gap="1rem">
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Nombre" Variant="Variant.Flat">
+                <RadzenTextBox @bind-value="@producto.Nombre" />
+            </RadzenFormField>
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Estado Del Producto" Variant="Variant.Flat">
+
+
+                <RadzenDropDown Value="producto.Estado"
+                                Data="@tipoestadoproducto"
+                                Placeholder="Seleccione un tipo"
+                                TextProperty="Text"
+                                ValueProperty="Value"
+                                TValue="string"
+                                Change="@(args => OnestadoproductoChange(args))" />
+            </RadzenFormField>
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Tipo de Elaboración" Variant="Variant.Flat">
+              
+
+                <RadzenDropDown Value="producto.TipoElaboracion"
+                                Data="@tipoElaboracionOptions"
+                                Placeholder="Seleccione un tipo"
+                                TextProperty="Text"
+                                ValueProperty="Value"
+                                TValue="string"
+                                Change="@(args => OnTipoElaboracionChange(args))" />
+            </RadzenFormField>
+
+
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="6" SizeSM="6">
+        <RadzenStack>
+            <RadzenFormField Text="Cantidad Disponible" Variant="Variant.Flat">
+                <RadzenNumeric @bind-value="@producto.CantidadDisponible" TValue="int" />
+            </RadzenFormField>
+        </RadzenStack>
+    </RadzenColumn>
+
+    <RadzenColumn Size="12" SizeSM="12" Alignment="AlignItems.End">
+        <RadzenButton Click="@((args) => dialogService.Close(true))" ButtonStyle="ButtonStyle.Secondary" Variant="Variant.Flat" Text="Cerrar" Style="width: 120px" />
+        <RadzenButton Text="Guardar" Click="@ActualizarProducto" ButtonStyle="ButtonStyle.Primary" />
+    </RadzenColumn>
+</RadzenRow>
+
+@code {
+ 
+}

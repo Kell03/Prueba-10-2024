@@ -1,0 +1,55 @@
+﻿@page "/productos"
+@using Practice_wasm.Models
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
+
+@inject DialogService DialogService
+@attribute [Authorize]
+<h3>Productos</h3>
+
+@if (productoList == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 mb-2">
+                <RadzenButton Icon="add" ButtonStyle="ButtonStyle.Primary" Click=@(() => OpenOrder(0)) />
+            </div>
+            <div class="col-md-10">
+            </div>
+            <div class="col-md-12">
+                <RadzenDataGrid @ref="productsGrid" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                                Data="@productoList" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" @bind-Value=@selectedProducto>
+
+                    <Columns>
+
+                        <RadzenDataGridColumn Property="@nameof(ProductoDto.Id)" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+                        <RadzenDataGridColumn Property="@nameof(ProductoDto.Nombre)" Title="Nombre" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(ProductoDto.CantidadDisponible)" Title="Cantidad" Width="160px" />
+
+                        <RadzenDataGridColumn Property="@nameof(ProductoDto.TipoElaboracion)" Title="Tipo de Elaboración" Width="160px" />
+                        <RadzenDataGridColumn Property="@nameof(ProductoDto.Estado)" Title="Estado" Width="160px" />
+                        <RadzenDataGridColumn Width="160px" Title="Detalles del Producto">
+                            <Template Context="data">
+                                <div class="d-flex justify-content-start gap-2">
+                                    <RadzenButton ButtonStyle="ButtonStyle.Info" Icon="edit" Size="ButtonSize.ExtraSmall" Click=@(() => OpenOrder(data.Id)) />
+                                    <RadzenButton ButtonStyle="ButtonStyle.Success" Icon="shopping_cart" Size="ButtonSize.ExtraSmall" Click=@(() => Maketransaction(data.Id)) />
+
+                                    <RadzenButton Disabled="true" ButtonStyle="ButtonStyle.Danger" Icon="delete" Size="ButtonSize.ExtraSmall" Click=@(() => Eliminar(data.Id)) />
+                                </div>
+                            </Template>
+                        </RadzenDataGridColumn>
+
+                    </Columns>
+                </RadzenDataGrid>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+ 
+}

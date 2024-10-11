@@ -1,0 +1,17 @@
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\Capa Acceso Datos.deps.json
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\Capa Acceso Datos.runtimeconfig.json
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\Capa Acceso Datos.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\Capa Acceso Datos.pdb
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\CapaDominio.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\bin\Debug\net8.0\CapaDominio.pdb
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acc.C461AFCA.Up2Date
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\refint\Capa Acceso Datos.dll
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.pdb
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\Capa Acceso Datos.genruntimeconfig.cache
+C:\Users\Lenovo\source\repos\CapaPersistencia\obj\Debug\net8.0\ref\Capa Acceso Datos.dll

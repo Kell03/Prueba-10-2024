@@ -1,0 +1,17 @@
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\Capa Servicio.deps.json
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\Capa Servicio.dll
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\Capa Servicio.pdb
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\Capa Acceso Datos.dll
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\CapaDominio.dll
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\Capa Acceso Datos.pdb
+C:\Users\Lenovo\source\repos\Capa Servicio\bin\Debug\net8.0\CapaDominio.pdb
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Ser.80815B84.Up2Date
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.dll
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\refint\Capa Servicio.dll
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\Capa Servicio.pdb
+C:\Users\Lenovo\source\repos\Capa Servicio\obj\Debug\net8.0\ref\Capa Servicio.dll
