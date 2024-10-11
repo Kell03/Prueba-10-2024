@@ -16,14 +16,14 @@ namespace ApiPractice.EndPoints
             {
                 var lista = await service.GetAll(index, take);
                 return lista;
-            });
+            }).AllowAnonymous(); ;
 
             // Obtener un usuario por ID
             app.MapGet("/{id}", async (int id, IUsuario service) =>
             {
                 var usuario = await service.GetById(id);
                 return usuario;
-            });
+            }).AllowAnonymous(); ;
 
             // Agregar un nuevo usuario
             app.MapPost("/", async (Usuariodto modeldto, IUsuario service, IMapper mapper) =>
@@ -32,7 +32,7 @@ namespace ApiPractice.EndPoints
                     var resultado = await service.Add(model);
                     return resultado;
                
-            });
+            }).AllowAnonymous(); ;
 
             // Actualizar un usuario existente
             app.MapPut("/edit/{id}", async (int id, Usuariodto model, IUsuario service, IMapper _mapper) =>
@@ -45,14 +45,14 @@ namespace ApiPractice.EndPoints
                     var resultado = await service.Update(mappermodel);
                     return resultado;
                 
-            });
+            }).AllowAnonymous(); ;
 
             // Eliminar un usuario por ID
             app.MapDelete("/delete/{id}", async (int id, IUsuario service) =>
             {
                 var resultado = await service.Delete(id);
                 return resultado;
-            });
+            }).AllowAnonymous(); ;
         }
     }
 }
