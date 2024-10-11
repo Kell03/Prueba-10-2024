@@ -4,7 +4,6 @@
 @using Microsoft.AspNetCore.Components.Authorization;
 
 @inject DialogService DialogService
-@attribute [Authorize]
 
 
 
@@ -21,11 +20,13 @@ else
     <div class="container">
         <div class="row">
             <div class="col-md-2 mb-2">
-                <RadzenButton Icon="add" ButtonStyle="ButtonStyle.Primary" Click=@(() => OpenOrder(0)) />
+                <RadzenButton Icon="add" ButtonStyle="ButtonStyle.Primary"  Text="Agrgar" Click=@(() => OpenOrder(0)) />
             </div>
             <div class="col-md-10">
             </div>
             <div class="col-md-12">
+                <AuthorizeView>
+                    <Authorized>
                 <RadzenDataGrid @ref="usersGrid" AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
                                 Data="@usuarioList" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" @bind-Value=@selectedUsuario>
 
@@ -46,6 +47,9 @@ else
 
                     </Columns>
                 </RadzenDataGrid>
+
+                </Authorized>
+            </AuthorizeView>
 
             </div>
 
